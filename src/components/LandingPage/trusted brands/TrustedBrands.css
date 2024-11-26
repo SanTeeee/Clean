@@ -1,0 +1,11 @@
+.trustedBrands {
+  padding: 20px 110px;
+  color: #fff;
+}
+.brandImages {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 0;
+}

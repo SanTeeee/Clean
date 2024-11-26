@@ -1,0 +1,50 @@
+.overall {
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+  background-image: linear-gradient(to bottom right, #e1ecfa, #294f7c);
+  height: 600px;
+}
+.overall h1 {
+  color: white;
+}
+.personalizedWrapper,
+.personalizedWrapper2 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  column-gap: 60px;
+  margin-top: 50px;
+}
+
+.personalizedCard {
+  background-color: white;
+  padding: 20px 25px;
+  width: 280px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+.personalizedCard .img {
+  width: 120px;
+  height: 120px;
+  color: #287bdd;
+}
+.personalizedCard p {
+  margin-top: 10px;
+}
+.swiper-slide {
+}
+
+.swiper-pagination-bullet {
+  background-color: #d9d9d9 !important;
+  height: 12px !important;
+  width: 12px !important;
+}
+.swiper-pagination-bullet-active {
+  background: #2ecc71 !important;
+}
+Footer {
+  background: red;
+}

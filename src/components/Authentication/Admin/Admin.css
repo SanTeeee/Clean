@@ -1,0 +1,64 @@
+.welcome {
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.AdminInput {
+  width: 100%;
+  border: 1px solid #2c3e50;
+  padding: 5px 20px;
+  border-radius: 7px;
+  outline: none;
+  height: 45px;
+  font-weight: 300;
+  font-family: "Roboto", sans-serif;
+}
+
+.routeToAuth .labels {
+  font-weight: 400;
+}
+.routeToAuth input {
+  margin: 12px 0;
+}
+
+.showPassword {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.showPassword svg {
+  right: 20px;
+  cursor: pointer;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  color: #287bdd;
+}
+.forgotPassword {
+  margin-top: 10px;
+}
+.forgotPassword button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+  height: 100%;
+  padding: 10px;
+  width: 100%;
+  border-radius: 7px;
+  margin-top: 24px;
+  height: 45px;
+  transition: 0.3s;
+}
+.forgotPassword button:hover {
+  border: 2px solid #287bdd;
+  background-color: #fff;
+  color: #287bdd;
+}
+
+.forgotPassword span {
+  color: #287bdd;
+  margin-left: 5px;
+}

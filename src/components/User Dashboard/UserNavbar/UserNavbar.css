@@ -1,0 +1,38 @@
+.UserNavContainer {
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+  width: 100vw;
+  align-items: center;
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.userComponent {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+}
+.userComponent svg {
+  color: #287bdd;
+  height: 30px;
+  width: 30px;
+}
+.avatar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 10px;
+  padding: 0 30px;
+}
+.avatar img {
+  height: 50px;
+  width: 50px;
+}
+.avatarInfo p {
+  font-size: 14px;
+  text-indent: 5px;
+}

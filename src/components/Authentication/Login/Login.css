@@ -1,0 +1,70 @@
+.LoginWrap {
+  background-color: #e1ecfa;
+  height: 100vh;
+  padding: 80px 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.RegisterWrap {
+  background-color: #e1ecfa;
+  height: 100vh;
+  padding: 80px 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.LoginWrap img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin: 30px 0;
+}
+
+.auth {
+  background-color: #fafafa;
+  border-radius: 7px;
+}
+.authContents {
+  padding: 70px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.firstP {
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 30px;
+}
+.routeToAuth {
+  margin-top: 40px;
+}
+.routeToAuth a p {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  color: #287bdd;
+}
+.Admin {
+  width: 100%;
+  border: 2px solid #287bdd;
+  padding: 12px 40px;
+  border-radius: 7px;
+  margin-top: 12px;
+  transition: 0.3s;
+}
+.Admin:hover {
+  background-color: #287bdd;
+  color: white;
+}
+.Admin a {
+}
+
+.authContents p:nth-child(4) {
+  margin-top: 20px;
+}

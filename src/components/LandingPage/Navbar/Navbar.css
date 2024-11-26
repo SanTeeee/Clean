@@ -1,0 +1,47 @@
+.navContainer {
+  width: 100vw;
+  padding: 30px 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 9px lightgray;
+  z-index: 2;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+}
+header {
+  color: #287bdd;
+}
+.navLinks {
+  display: flex;
+  column-gap: 40px;
+}
+.navLinks a {
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+  padding: 10px 15px;
+  border-radius: 7px;
+}
+.navLinks a:hover {
+  background-color: #e1ecfa;
+}
+.login {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+}
+button {
+  border: none;
+  padding: 10px 12px;
+  border-radius: 3px;
+  color: white;
+  background-color: #287bdd;
+}
