@@ -6,7 +6,7 @@
   width: 100vw;
   align-items: center;
   position: fixed;
-  background-color: #fff;
+  backdrop-filter: blur(60px);
   top: 0;
   left: 0;
   z-index: 2;

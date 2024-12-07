@@ -79,3 +79,8 @@
   padding: 1.5px;
   border-radius: 6px;
 }
+
+.table {
+  width: 95%;
+  padding: 1rem 0;
+}

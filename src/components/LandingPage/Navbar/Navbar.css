@@ -5,7 +5,7 @@
   justify-content: space-around;
   align-items: center;
   position: fixed;
-  background-color: #fff;
+  backdrop-filter: blur(60px);
   top: 0;
   left: 0;
   box-shadow: 0 0 9px lightgray;
