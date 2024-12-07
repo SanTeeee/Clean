@@ -14,7 +14,7 @@ const Table = () => {
         const response = await axios.get(url);
         setData(
           response.data.users.map((user) => ({
-            id: user.id,
+            id: "#" + user.id,
             name: `${user.firstName} ${user.lastName}`,
             email: user.email,
             age: user.age,
