@@ -1,10 +1,13 @@
 .column-two {
-  width: 300px; /* Fixed width for column-two */
+  /* Fixed width for column-two */
+  width: 350px;
   padding: 0 15px;
-  position: relative;
+  border-left: 0.5px solid lightgray;
+  position: fixed;
+  right: 0;
 }
 
-.column-two::before {
+/* .column-two::before {
   position: absolute;
   content: "";
   width: 0.5px;
@@ -13,7 +16,7 @@
   top: -100px;
   left: 0;
   overflow-y: hidden;
-}
+} */
 
 .calendar {
 }

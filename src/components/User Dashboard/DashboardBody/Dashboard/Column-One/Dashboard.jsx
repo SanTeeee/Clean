@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaArrowTrendUp } from "react-icons/fa6";
 import "./Column-One.css";
 import {
@@ -13,6 +13,8 @@ import OrderSummary from "../Column-Two/OrderSummary";
 import { useOutletContext } from "react-router-dom";
 
 const Dashboard = () => {
+  const [selectedUser, setSelectedUser] = useState(true); // State for selected user in the table component
+
   const boxOne = [
     {
       icon: <MdOutlineShoppingCart />,
@@ -86,13 +88,17 @@ const Dashboard = () => {
         <h1>Welcome</h1>
         <div className="box">{renderedBoxes}</div>
         <Chart />
-        <Table />
+        <Table
+          selectedUser={selectedUser}
+          setSelectedUser={setSelectedUser}
+          collapse={collapse}
+        />
       </div>
 
       {/* "2nd column not considering sidebar" */}
       <div className="column-two">
         <Calendar />
-        <OrderSummary />
+        <OrderSummary selectedUser={selectedUser} />
       </div>
     </div>
   );

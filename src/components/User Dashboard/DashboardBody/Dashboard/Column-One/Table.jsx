@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { MaterialReactTable } from "material-react-table";
 import axios from "axios";
 
-const Table = () => {
+const Table = ({ selectedUser, setSelectedUser, collapse }) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -20,6 +20,7 @@ const Table = () => {
             age: user.age,
             country: user.address?.country || "Unknown",
             status: user.isVerified ? "Verified" : "Unverified",
+            description: user, // Store full user object for detailed display
           }))
         );
       } catch (error) {
@@ -43,7 +44,6 @@ const Table = () => {
         accessorKey: "name",
         size: 100,
       },
-
       {
         header: "Email",
         accessorKey: "email",
@@ -68,78 +68,61 @@ const Table = () => {
     []
   );
 
-  // Handle editing row values
-  const handleSaveRow = async ({ exitEditingMode, row, values }) => {
-    try {
-      // Update the specific row's data
-      const updatedData = data.map((item) =>
-        item.id === row.original.id ? { ...item, ...values } : item
-      );
-      setData(updatedData);
-
-      // Simulate a server update
-      await axios.put(`https://dummyjson.com/users/${row.original.id}`, values);
-    } catch (error) {
-      console.error("Failed to save changes", error);
-    } finally {
-      exitEditingMode(); // Close edit mode
-    }
+  const handleRowClick = (row) => {
+    console.log(row);
+    // Toggle the selected user: clear if the same row is clicked again
+    setSelectedUser(
+      selectedUser && selectedUser.id === row.original.description.id
+        ? null
+        : row.original.description
+    );
   };
 
   return (
-    <div style={{ padding: "1rem 0" }} className="table">
+    <div className={`table ${collapse ? "collapse" : ""}`}>
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
         <p style={{ color: "red" }}>Error: {error}</p>
       ) : (
-        <MaterialReactTable
-          columns={columns}
-          data={data}
-          enableClickToCopy
-          enableColumnOrdering
-          enableEditing
-          editingMode="modal" // Optional: Use "cell", "row", or "modal" editing modes
-          onEditingRowSave={handleSaveRow}
-          muiTableContainerProps={{
-            sx: {
-              maxHeight: "50vh",
-              overflowX: "hidden",
-            },
-          }}
-          muiTableBodyProps={{
-            sx: {
-              "& td": {
-                padding: "4px 8px",
-                fontSize: "0.875rem",
+        <>
+          <MaterialReactTable
+            columns={columns}
+            data={data}
+            enableColumnOrdering
+            muiTableContainerProps={{
+              sx: {
+                maxHeight: "50vh",
+                overflow: "auto",
               },
-            },
-          }}
-          muiTableHeadCellProps={{
-            sx: {
-              padding: "6px 10px",
-              fontSize: "0.875rem",
-            },
-          }}
-          muiTablePaperProps={{
-            sx: {
-              width: "100%",
-              overflow: "hidden",
-            },
-          }}
-          muiTableProps={{
-            sx: {
-              "& .MuiTableRow-root": {
-                height: "50px",
+            }}
+            muiTableBodyRowProps={({ row }) => ({
+              onClick: () => {
+                handleRowClick(row); // Call your existing row click handler
               },
-            },
-          }}
-          initialState={{
-            pagination: {
-              pageSize: 5,
-            },
-          }}
-        />
+              sx: {
+                cursor: "pointer", // Make the row clickable
+                "&:hover": {
+                  backgroundColor: "#e1ecfa", // Add hover effect for better UX
+                },
+              },
+            })}
+            muiTableBodyProps={{
+              sx: {
+                "& td": {
+                  padding: "15px",
+                  fontSize: "13px",
+                  cursor: "pointer", // Add pointer cursor for clickable rows
+                },
+              },
+            }}
+            initialState={{
+              pagination: {
+                pageSize: 5,
+              },
+            }}
+          />
+        </>
       )}
     </div>
   );

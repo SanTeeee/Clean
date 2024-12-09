@@ -4,13 +4,12 @@
 }
 
 .column-one {
-  flex-grow: 1; /* Allow column-one to take up remaining space */
   transition: margin-left 0.3s ease, width 0.3s ease; /* Smooth resizing transition */
-  width: calc(100vw - 250px); /* Default width with sidebar open */
+  width: calc(100vw - 650px); /* Default width with sidebar open */
 }
 
 .column-one.collapse {
-  width: calc(100vw - 50px); /* Adjust width based on sidebar collapse width */
+  width: calc(100vw - 650px); /* Adjust width based on sidebar collapse width */
 }
 
 .box {
@@ -81,6 +80,10 @@
 }
 
 .table {
-  width: 95%;
+  max-width: 98%;
+  padding: 1rem 0;
+}
+.table.collapse {
+  width: 98%;
   padding: 1rem 0;
 }

@@ -7,7 +7,6 @@ import { Outlet } from "react-router-dom";
 const DashboardBody = ({ collapse }) => {
   // const className = "dashboardContent";
   // const collapsedClassName = "collapsedDashboardContent";
-
   return (
     <div className={`dashboardContent ${collapse ? " collapse" : ""}`}>
       <Outlet context={{ collapse }} />
