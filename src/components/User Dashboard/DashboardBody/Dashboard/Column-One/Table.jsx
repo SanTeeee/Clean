@@ -42,13 +42,13 @@ const Table = ({ selectedUser, setSelectedUser }) => {
     ],
     []
   );
-
-  const handleRowClick = (row) => {
-    // Toggle the selected user: clear if the same row is clicked again
+  const handleRowClick = (event) => {
+    // Access the row data directly from the event target (row)
+    const row = event.currentTarget;
     setSelectedUser(
-      selectedUser && selectedUser.id === row.original.description.id
+      selectedUser && selectedUser.id === row.row.original.description.id
         ? null
-        : row.original.description
+        : row.row.original.description
     );
   };
 
@@ -63,12 +63,9 @@ const Table = ({ selectedUser, setSelectedUser }) => {
           columns={columns}
           data={data}
           muiTableBodyRowProps={({ row }) => ({
-            onClick: () => handleRowClick(row), // Call handleRowClick here
+            onClick: handleRowClick, // No arguments needed, handleRowClick will access the row data internally
             sx: {
-              cursor: "pointer", // Pointer cursor on hover
-              "&:hover": {
-                backgroundColor: "#f5f5f5", // Highlight row on hover
-              },
+              cursor: "pointer", // Add cursor style for clickability
             },
           })}
           muiTableBodyProps={{
