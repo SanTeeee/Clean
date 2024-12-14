@@ -88,11 +88,11 @@ const Table = ({ selectedUser, setSelectedUser, collapse }) => {
           <MaterialReactTable
             columns={columns}
             data={data}
-            muiTableContainerProps={{
-              sx: {
-                overflow: "auto",
-              },
-            }}
+            // muiTableContainerProps={{
+            //   sx: {
+            //     overflow: "auto",
+            //   },
+            // }}
             muiTableBodyRowProps={({ row }) => ({
               onClick: () => {
                 handleRowClick(row); // Call your existing row click handler
