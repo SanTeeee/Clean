@@ -93,14 +93,14 @@ const Table = ({ selectedUser, setSelectedUser, collapse }) => {
             //     overflow: "auto",
             //   },
             // }}
-            muiTableBodyRowProps={({ row }) => ({
-              onClick: () => {
-                handleRowClick(row); // Call your existing row click handler
-              },
-              sx: {
-                cursor: "pointer", // Make the row clickable
-              },
-            })}
+            // muiTableBodyRowProps={({ row }) => ({
+            //   onClick: () => {
+            //     handleRowClick(row); // Call your existing row click handler
+            //   },
+            //   sx: {
+            //     cursor: "pointer", // Make the row clickable
+            //   },
+            // })}
             // muiTableHeadRowProps={{
             //   sx: {
             //     "& th": {
