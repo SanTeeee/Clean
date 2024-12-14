@@ -4,7 +4,7 @@ import axios from "axios";
 
 const Table = ({ selectedUser, setSelectedUser, collapse }) => {
   const [data, setData] = useState([]);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -12,7 +12,6 @@ const Table = ({ selectedUser, setSelectedUser, collapse }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(url);
-
         setData(
           response.data.users.map((user) => ({
             id: "#" + user.id,
@@ -76,6 +75,7 @@ const Table = ({ selectedUser, setSelectedUser, collapse }) => {
         : row.original.description
     );
   };
+  console.log(data);
 
   return (
     <div className={`table ${collapse ? "collapse" : ""}`}>
@@ -121,7 +121,6 @@ const Table = ({ selectedUser, setSelectedUser, collapse }) => {
                 },
               },
             }}
-            muitable
             initialState={{
               pagination: {
                 pageSize: 10,
