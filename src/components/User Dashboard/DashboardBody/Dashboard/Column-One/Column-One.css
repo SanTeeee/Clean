@@ -9,7 +9,7 @@
 }
 
 .column-one.collapse {
-  width: calc(100vw - 650px); /* Adjust width based on sidebar collapse width */
+  width: calc(100vw - 550px); /* Adjust width based on sidebar collapse width */
 }
 
 .box {

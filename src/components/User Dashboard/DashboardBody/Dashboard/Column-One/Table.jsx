@@ -12,6 +12,7 @@ const Table = ({ selectedUser, setSelectedUser, collapse }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(url);
+
         setData(
           response.data.users.map((user) => ({
             id: "#" + user.id,
@@ -67,9 +68,7 @@ const Table = ({ selectedUser, setSelectedUser, collapse }) => {
     ],
     []
   );
-
   const handleRowClick = (row) => {
-    console.log(row);
     // Toggle the selected user: clear if the same row is clicked again
     setSelectedUser(
       selectedUser && selectedUser.id === row.original.description.id
@@ -89,10 +88,8 @@ const Table = ({ selectedUser, setSelectedUser, collapse }) => {
           <MaterialReactTable
             columns={columns}
             data={data}
-            enableColumnOrdering
             muiTableContainerProps={{
               sx: {
-                maxHeight: "50vh",
                 overflow: "auto",
               },
             }}
@@ -102,9 +99,6 @@ const Table = ({ selectedUser, setSelectedUser, collapse }) => {
               },
               sx: {
                 cursor: "pointer", // Make the row clickable
-                "&:hover": {
-                  backgroundColor: "#e1ecfa", // Add hover effect for better UX
-                },
               },
             })}
             muiTableBodyProps={{
@@ -116,9 +110,21 @@ const Table = ({ selectedUser, setSelectedUser, collapse }) => {
                 },
               },
             }}
+            muiTableHeadRowProps={{
+              sx: {
+                "& th": {
+                  backgroundColor: "#e1ecfa", // Change this to your desired color
+                  // Adjust text color for better contrast
+                  fontWeight: "bold",
+                  fontSize: "14px",
+                  // Optional: align text to center
+                },
+              },
+            }}
+            muitable
             initialState={{
               pagination: {
-                pageSize: 5,
+                pageSize: 10,
               },
             }}
           />
