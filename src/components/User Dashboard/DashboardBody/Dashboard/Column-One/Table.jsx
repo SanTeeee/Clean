@@ -88,11 +88,11 @@ const Table = ({ selectedUser, setSelectedUser, collapse }) => {
           <MaterialReactTable
             columns={columns}
             data={data}
-            // muiTableContainerProps={{
-            //   sx: {
-            //     overflow: "auto",
-            //   },
-            // }}
+            muiTableContainerProps={{
+              sx: {
+                overflow: "auto",
+              },
+            }}
             muiTableBodyRowProps={({ row }) => ({
               onClick: () => {
                 handleRowClick(row); // Call your existing row click handler
@@ -101,17 +101,17 @@ const Table = ({ selectedUser, setSelectedUser, collapse }) => {
                 cursor: "pointer", // Make the row clickable
               },
             })}
-            muiTableHeadRowProps={{
-              sx: {
-                "& th": {
-                  backgroundColor: "#e1ecfa", // Change this to your desired color
-                  // Adjust text color for better contrast
-                  fontWeight: "bold",
-                  fontSize: "14px",
-                  // Optional: align text to center
-                },
-              },
-            }}
+            // muiTableHeadRowProps={{
+            //   sx: {
+            //     "& th": {
+            //       backgroundColor: "#e1ecfa", // Change this to your desired color
+            //       // Adjust text color for better contrast
+            //       fontWeight: "bold",
+            //       fontSize: "14px",
+            //       // Optional: align text to center
+            //     },
+            //   },
+            // }}
             initialState={{
               pagination: {
                 pageSize: 10,
