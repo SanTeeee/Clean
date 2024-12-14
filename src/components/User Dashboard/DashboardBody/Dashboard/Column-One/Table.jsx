@@ -112,11 +112,11 @@ const Table = ({ selectedUser, setSelectedUser, collapse }) => {
             //     },
             //   },
             // }}
-            initialState={{
-              pagination: {
-                pageSize: 10,
-              },
-            }}
+            // initialState={{
+            //   pagination: {
+            //     pageSize: 10,
+            //   },
+            // }}
           />
         </>
       )}
