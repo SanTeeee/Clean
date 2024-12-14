@@ -88,19 +88,19 @@ const Table = ({ selectedUser, setSelectedUser, collapse }) => {
           <MaterialReactTable
             columns={columns}
             data={data}
-            muiTableContainerProps={{
-              sx: {
-                overflow: "auto",
-              },
-            }}
-            // muiTableBodyRowProps={({ row }) => ({
-            //   onClick: () => {
-            //     handleRowClick(row); // Call your existing row click handler
-            //   },
+            // muiTableContainerProps={{
             //   sx: {
-            //     cursor: "pointer", // Make the row clickable
+            //     overflow: "auto",
             //   },
-            // })}
+            // }}
+            muiTableBodyRowProps={({ row }) => ({
+              onClick: () => {
+                handleRowClick(row); // Call your existing row click handler
+              },
+              sx: {
+                cursor: "pointer", // Make the row clickable
+              },
+            })}
             muiTableHeadRowProps={{
               sx: {
                 "& th": {
