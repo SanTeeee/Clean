@@ -10,7 +10,7 @@ const Table = ({ selectedUser, setSelectedUser }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://dummyjson.com/users");
+        const response = await axios.get("https://dummyjson.com/users");
         setData(
           response.data.users.map((user) => ({
             id: "#" + user.id,
