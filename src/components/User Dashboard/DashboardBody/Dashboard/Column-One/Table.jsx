@@ -23,7 +23,13 @@ const Table = ({ selectedUser, setSelectedUser }) => {
           }))
         );
       } catch (error) {
-        setError(error.message);
+        if (error.response) {
+          console.error("Response Error:", error.response.data);
+        } else if (error.request) {
+          console.error("Request Error:", error.request);
+        } else {
+          console.error("Axios Error:", error.message);
+        }
       } finally {
         setLoading(false);
       }
