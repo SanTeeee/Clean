@@ -7,17 +7,9 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
 }
-.RegisterWrap {
-  background-color: #e1ecfa;
-  height: 100vh;
-  padding: 80px 0;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
+
 .LoginWrap img {
   width: 50px;
   height: 50px;
@@ -30,17 +22,13 @@
   border-radius: 7px;
 }
 .authContents {
-  padding: 70px;
+  padding: 40px 60px;
   width: 600px;
   display: flex;
   flex-direction: column;
 }
 
-.firstP {
-  margin-bottom: 30px;
-  font-weight: 600;
-  font-size: 30px;
-}
+
 .routeToAuth {
   margin-top: 40px;
 }

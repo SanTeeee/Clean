@@ -1,5 +1,3 @@
-import React from "react";
-
 const OrderSummary = ({ selectedUser }) => {
   return (
     <div className="order-summary">

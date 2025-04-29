@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { FaArrowRight, FaEye, FaEyeSlash } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
@@ -17,7 +17,7 @@ const Auth = (props) => {
             <div className="authContents">
               <p>Enter your details</p>
               <div className="routeToAuth">
-                <label htmlFor="email" className="labels" props>
+                <label htmlFor="email" className="labels" >
                   {props.email}
                 </label>
                 <input

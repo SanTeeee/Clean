@@ -1,4 +1,3 @@
-import React from "react";
 import order from "../../../assets/order.json";
 import security from "../../../assets/security.png";
 import reporting from "../../../assets/reporting.png";

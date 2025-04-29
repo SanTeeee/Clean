@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./Login.css";
 import icon from "../../../assets/CT Icon.png";
 import { HiArrowRight } from "react-icons/hi";

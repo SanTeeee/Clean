@@ -1,4 +1,3 @@
-import React from "react";
 import Icon from "../../../assets/CT Icon.png";
 import "./UserNavbar.css";
 import UserComponent from "./UserComponent";
